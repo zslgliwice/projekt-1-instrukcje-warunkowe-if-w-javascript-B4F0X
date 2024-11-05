@@ -19,10 +19,26 @@
 	<div id="wynik"></div>
 	
 	<script>
-	
+	const imie = document.getElementById('imie');
+	const wiek = document.getElementById('wiek');
+	const wynik = document.getElementById('wynik');
 		function sprawdz()
 		{
-			
+			i = imie.value 
+			w = parseInt(wiek.value)
+
+			if(w<16){
+				wynik.innerHTML = `Witaj ${i}, nie możesz wziąć udziału w seanise`
+			}else if(w>=16&&w<=17){
+				wynik.innerHTML = `Witaj ${i}, możesz wziąć udział w seanise z opiekunem , za 12 zł`
+				
+			}else if(w>=18){
+				if(i.toLowerCase() =="brad"||i.toLowerCase() =="morgan"){
+					wynik.innerHTML = `Witaj ${i}, możesz wziąć udział w seanise, za 0 zł`
+					return;
+				}
+				wynik.innerHTML = `Witaj ${i}, możesz wziąć udział w seanise, za 18 zł`
+			}
 			
 		}
 
