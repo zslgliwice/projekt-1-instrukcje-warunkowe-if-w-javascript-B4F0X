@@ -18,9 +18,25 @@
 	<div id="wynik"></div>
 	
 	<script>
-	
+		wynik = document.getElementById('wynik');
 		function ktora_cwiartka()
 		{
+			
+			x = document.getElementById('x').value;
+			y = document.getElementById('y').value;
+			if(x==15&&y==96){
+				wynik.innerHTML = "krótki zarys życiorysu Kartezjusza (przygotowany wg Twojego uznania)"
+			}else if(x>0&&y>0){
+				wynik.innerHTML = "ćwiartka 1!!!"
+			}else if(x<0&&y>0){
+				wynik.innerHTML = "ćwiartka 2!!!"
+			}else if(x<0&&y<0){
+				wynik.innerHTML = "ćwiartka 3!!!"
+			}else if(x>0&&y<0){
+				wynik.innerHTML = "ćwiartka 4!!!"
+			}else if(x==0&&y==0){
+				wynik.innerHTML = "początek układu"
+			}
 			
 			
 		}
