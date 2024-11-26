@@ -23,11 +23,37 @@
 	
 		function matematyka()
 		{
+			var wynik = document.getElementById('wynik')
 			var a = document.getElementById('a').value;
 			var b = document.getElementById('b').value;
 			var c = document.getElementById('c').value;
+			var tab = [a,b,c]
+			wynik.innerHTML=""
+			tab.sort();
+			wynik.innerHTML +=`<p>1.Najmniejsza liczba = ${tab[0]}</p>`
+			wynik.innerHTML +=`<p>2.Najwieksza liczba = ${tab[2]}</p>`
+			str = `<p>3.Wartosc bezwględna `
+			tab.forEach(element => {
+				if(element<0){
+					str+=` |${element}| = ${element * (-1)}  `
+				}else{
+					str+=` |${element}| = ${element }  `
+				}
+			});
+			str+='</p>'
+				wynik.innerHTML+=str
 			
-			
+			str = "<p>4.Parzysta "
+			tab.forEach(element => {
+				if(element%2==0){
+					str+=`${element}-parzysta    `
+				}else{
+					str+=`${element}-nieparzysta    `
+				}
+
+			});
+			str+='</p>'
+			wynik.innerHTML+=str
 		}
 
 	</script>
