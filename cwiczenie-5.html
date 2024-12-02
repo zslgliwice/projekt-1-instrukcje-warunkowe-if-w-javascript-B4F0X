@@ -11,7 +11,7 @@
 
 <body>
 
-	<label> Którą bramkę wybierasz: <input type="number" id="bramka"> </label>
+	<label> Którą bramkę wybierasz: <input type="number" id="bramka" min="1" max="3"> </label>
 
 	<input type="submit" value="Wybieram bramkę" onclick="teleturniej()">
 
@@ -22,6 +22,12 @@
 		function teleturniej()
 		{
 			var lucky = Math.floor(Math.random() * 3) + 1;
+			var bramka = document.getElementById("bramka").value;
+			if(bramka == lucky){
+				document.getElementById("wynik").innerHTML = `Hurra! W bramce nr ${lucky} jest samochód!`
+			}else{
+				document.getElementById("wynik").innerHTML = `Niestety! Samochód znajdował sie w bramce nr ${lucky}...`
+			}
 			
 		}
 
